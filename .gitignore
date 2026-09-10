@@ -1,0 +1,32 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.env
+
+# Database
+*.db
+*.sqlite3
+
+# Storage (uploaded documents are sensitive)
+storage/uploads/*
+storage/processed/*
+storage/reports/*
+!storage/uploads/.gitkeep
+!storage/processed/.gitkeep
+!storage/reports/.gitkeep
+
+# Frontend
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db

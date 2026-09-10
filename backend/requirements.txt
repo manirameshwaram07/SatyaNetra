@@ -1,0 +1,44 @@
+# SatyaNetra backend requirements (Windows-friendly, Python 3.11/3.12)
+
+# --- Web framework ---
+fastapi>=0.110,<1.0
+uvicorn[standard]>=0.29
+python-multipart>=0.0.9
+pydantic>=2.6,<3.0
+pydantic-settings>=2.2
+
+# --- Database ---
+SQLAlchemy>=2.0,<3.0
+alembic>=1.13
+
+# --- Security ---
+PyJWT>=2.8
+passlib>=1.7.4
+bcrypt==4.0.1  # passlib-compatible bcrypt (4.1+ breaks passlib version detection)
+
+# --- Computer vision / imaging ---
+numpy>=1.26,<2.0
+opencv-python-headless>=4.9
+Pillow>=10.2
+
+# --- PDF handling (render PDF pages to images without poppler) ---
+PyMuPDF>=1.24
+
+# --- OCR (pytesseract is optional at runtime; WinRT OCR fallback is built-in) ---
+pytesseract>=0.3.10
+
+# --- Reporting ---
+reportlab>=4.1
+
+# --- Optional AI explanation (Google GenAI - current SDK) ---
+google-genai>=1.0.0
+
+# --- Testing ---
+pytest>=8.0
+httpx>=0.27
+
+# Notes:
+# * Tesseract OCR: if installed and on PATH (or TESSERACT_CMD set), it is used first.
+# * Windows 10/11 built-in OCR (WinRT) is attempted next - no installation needed.
+# * If both are unavailable and DEMO_MODE=true, a clearly-labeled DEMO data source is used.
+# * face_recognition (dlib) is NOT required; it is used only if already installed.
